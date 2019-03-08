@@ -1,0 +1,22 @@
+{
+  "name": "brewtal-app",
+  "version": "1.0.0",
+  "description": "an app for beer brewers",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "export NODE_ENV=test && jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BRichie/brewtal_hops.git"
+  },
+  "keywords": [
+    "beer"
+  ],
+  "author": "BcR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BRichie/brewtal_hops/issues"
+  },
+  "homepage": "https://github.com/BRichie/brewtal_hops#readme"
+}
