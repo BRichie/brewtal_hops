@@ -37,11 +37,13 @@
     "express-validator": "^5.0.2",
     "morgan": "^1.9.1",
     "nib": "^1.1.2",
+    "nodemon": "1.18.9",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.32.6",
+    "sendgrid": "^5.2.3",
     "stylus": "^0.54.5"
   }
 }
