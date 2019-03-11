@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../static/partials/head.ejs %>
+</head>
+
+<body>
+    <% include ../static/partials/navbar.ejs %>
+    <main class="container">
+   
+
+        <h1>Account </h1>
+        <h3>Let's get Brewing!
+            <%= `${currentUser.name}` %></h3>
+
+        <h3>INFO:</h3>
+        <h4>
+            <%= currentUser.email %>
+        </h4>      
+       
+    </main>
+    <% include ../static/partials/baseScripts.ejs %>
+</body>
+</html> 

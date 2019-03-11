@@ -1,0 +1,30 @@
+{
+  "development": {
+    "username": "brandonrichie",
+    "password": null,
+    "database": "brewtal-dev",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": false,
+    "operatorAliases": false
+  },
+  "test": {
+    "username": "brandonrichie",
+    "password": null,
+    "database": "brewtal-test",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": false,
+    "operatorAliases": false
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": false,
+    "operatorsAliases": false,
+    "use_env_variable": "DATABASE_URL"
+  }
+}

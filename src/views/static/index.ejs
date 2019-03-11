@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+  <head>
+    <% include ./partials/head.ejs %>
+
+  </head>
+  <body>
+
+    <% include ./partials/navbar.ejs %>
+
+
+     
+      <main class="container">
+
+      
+        <header class="jumbotron my-4">
+          <h1 class="display-3">BREWTAL HOPS</h1>
+          <p class="lead">Start Brewing! </p>
+
+          <h1>Sign in</h1>
+
+    <form action="/users/signin" method="post">
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+        <small class="text-muted" id="emailHelp">email address must be a valid address</small>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" aria-describedby="passwordHelp" placeholder="Enter password">
+        <small class="text-muted" id="passwordHelp">password</small>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Sign in</button>
+      <a href="/users/signup" class="btn btn-primary">Sign up</a>
+
+    </form>
+
+        </header>
+
+        <!-- Page Features -->
+        <section class="row text-center">
+
+         <!--  <section class="col-lg-5">
+            <h4 class="card-title">Recipes</h4>
+            <p class="card-text">Try new beers!</p>
+          </section>
+
+          <section class="col-lg-5">
+            <h4 class="card-title">Supplies</h4>
+            <p class="card-text">Purchase home brewing products!</p>
+          </section>
+
+          <section class="col-lg-5">
+            <h4 class="card-title">Share</h4>
+            <p class="card-text"> Share your thoughts and recipes to other brewers!</p>
+          </section> -->
+
+        </section>
+      
+
+      </main>
+ 
+
+      <% include ./partials/baseScripts.ejs %>
+
+    </body>
+</html>
