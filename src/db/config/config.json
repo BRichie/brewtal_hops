@@ -5,6 +5,8 @@
     "database": "brewtal-dev",
     "host": "127.0.0.1",
     "dialect": "postgres",
+    "storage": "development.db",
+
     "logging": false,
     "operatorAliases": false
   },
@@ -14,6 +16,8 @@
     "database": "brewtal-test",
     "host": "127.0.0.1",
     "dialect": "postgres",
+    "storage": "test.db",
+
     "logging": false,
     "operatorAliases": false
   },
@@ -23,6 +27,8 @@
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "postgres",
+    "storage": "production.db",
+
     "logging": false,
     "operatorsAliases": false,
     "use_env_variable": "DATABASE_URL"
