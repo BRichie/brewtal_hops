@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "brandonrichie",
+    "name": "brandonrichie",
     "password": null,
     "database": "brewtal-dev",
     "host": "127.0.0.1",
@@ -9,7 +9,7 @@
     "operatorAliases": false
   },
   "test": {
-    "username": "brandonrichie",
+    "name": "brandonrichie",
     "password": null,
     "database": "brewtal-test",
     "host": "127.0.0.1",
