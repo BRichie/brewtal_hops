@@ -3,27 +3,7 @@ const userQueries = require("../db/queries.users");
 const passport = require("passport");
 
 module.exports = {
-  create(req, res, next){
-         let newUser = {
-           email: req.body.email,
-           password: req.body.password,
-           passwordConfirmation: req.body.passwordConfirmation
-         };
   
-         userQueries.createUser(newUser, (err, user) => {
-           if(err){
-             req.flash("error", err);
-             res.redirect("/users/sign_up");
-           } else {
-    
-    
-             passport.authenticate("local")(req, res, () => {
-               req.flash("notice", "You've successfully signed in!");
-               res.redirect("/");
-             })
-           }
-         });
-       },
 
   signInForm(req, res, next) {
     res.render("users/signin");
@@ -68,14 +48,14 @@ module.exports = {
             passport.authenticate("local")(req, res, () => {
               req.flash("notice", `Success!!  ${user.name}  , You've successfully signed up!`);
             
-              res.redirect("/users/profile");
+              res.redirect("/users/signin");
             })
           }
         })
       },
 
       profile(req, res, next) {
-        res.render("users/profile");
+        res.render("/users/profile");
       },
 
 index(req, res, next) {

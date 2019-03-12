@@ -11,7 +11,7 @@ module.exports = {
 
 
     passport.use(new LocalStrategy({
-      nameField: "email"
+      usernameField: "email"
     }, (email, password, done) => {
       User.findOne({
         where: { email }
