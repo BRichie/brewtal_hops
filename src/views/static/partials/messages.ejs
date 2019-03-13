@@ -1,19 +1,39 @@
 <% if(messages.error || messages.notice) { %>
-    <div class="alert alert-<%= messages.error ? 'danger' : 'warning' %> alert-dismissible fade show" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <% if(messages.error) { %>
-          Validation errors:
-          <ul>
-      
-            <% messages.error.forEach((err) => { %>
-              <li><%= `${err.param} ${err.msg}` %></li>
-            <% }) %>
-          </ul>
-          <% } else { %>
-            <p><%= messages.notice %></p>
-          <% } %>
-        </div>
-      <% } %>
-  
+
+  <div class="alert alert-<%= messages.error ? 'danger' : 'warning' %> alert-dismissible fade show" role="alert">
+      <% if(messages.error) { %>
+        Validation errors:
+        <ul>
+    
+          <% messages.error.forEach((err) => { %>
+            <li><%= `${err.param} ${err.msg}` %></li>
+          <% }) %>
+        </ul>
+        <% } else { %>
+          <p><%= messages.notice %></p>
+        <% } %>
+      </div>
+    <% } %>
+   
+    
+
+
+<div class="container">
+    <div class="row">
+		<div class="col-md-6 p-a-3">
+
+		<div class="col-md-6 p-a-1">
+        <div class="alert alert-danger m-t-1 text-xs-center" role="alert">
+		        <i class="fa fa-exclamation fa-fw fa-lg"></i> 
+		    </div>
+		    <div class="alert alert-warning m-t-1 text-xs-center" role="alert">
+		        <i class="fa fa-bell-o fa-fw fa-lg"></i>
+		    </div>
+		    <div class="alert alert-info m-t-1 text-xs-center" role="alert">
+		        <i class="fa fa-info-circle fa-fw fa-lg"></i>
+		    </div>
+		    <div class="alert alert-success m-t-1 text-xs-center" role="alert">
+		        <i class="fa fa-check fa-fw fa-lg"></i>
+		    </div>
+		</div>
+	</div>
