@@ -58,7 +58,7 @@ module.exports = {
 
 
   profile(req, res, next) {
-    res.render("/users/profile");
+    res.render("users/profile");
   },
 
   index(req, res, next) {
