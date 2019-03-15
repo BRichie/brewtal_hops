@@ -1,5 +1,9 @@
+const express = require("express");
+const router = express.Router();
 const User = require("../db/models").User;
 const userQueries = require("../db/queries.users");
+const recipeQueries = require("../db/queries.recipes");
+
 const passport = require("passport");
 
 module.exports = {

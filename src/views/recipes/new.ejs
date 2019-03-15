@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+    <% include ../static/partials/navbar.ejs %>
+
+    <main class="container">
+       <% include ../static/partials/messages.ejs %>
+
+       <h1>NEW BREW</h1>
+       <form action="/recipes/create" method="post">
+        <div class="form-group">
+
+<label for="title">New Recipe:</label>
+          <input type="text" class="form-control" name="title" aria-describedby="titleHelp" placeholder="Enter Title">
+        </div>
+        <div class="form-group">
+          <label for="style">Style</label>
+          <textarea rows="4" class="form-control" name="style" placeholder="Style of Beer"></textarea>
+        </div>
+        <div class="form-group">
+                <label for="ingredients">Ingredients</label>
+                <textarea rows="4" class="form-control" name="ingredients" placeholder="Enter Ingredients"></textarea>
+              </div>
+              <div class="form-group">
+                    <label for="directions">Directions</label>
+                    <textarea rows="4" class="form-control" name="directions" placeholder="Enter Directions"></textarea>
+                  </div>
+                  <div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>      
+                </form>
+
+    </main>
+
+    <% include ../static/partials/baseScripts.ejs %>
+
+  </body>
+</html>
