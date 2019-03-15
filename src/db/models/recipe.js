@@ -25,6 +25,19 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Recipe.associate = function (models) {
 
+<<<<<<< HEAD
+    Recipe.hasMany(models.Vote, {
+      foreignKey: "recipeId",
+      as: "votes"
+    });
+    Recipe.hasMany(models.Comment, {
+      foreignKey: "recipeId",
+      as: "comments"
+    });
+
+
+=======
+>>>>>>> master
     Recipe.belongsTo(models.User, {
       foreignKey: "userId",
       onDelete: "CASCADE"
