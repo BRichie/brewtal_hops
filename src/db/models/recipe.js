@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Recipe.associate = function (models) {
 
+<<<<<<< HEAD
     Recipe.hasMany(models.Vote, {
       foreignKey: "recipeId",
       as: "votes"
@@ -35,10 +36,16 @@ module.exports = (sequelize, DataTypes) => {
     });
 
 
+=======
+>>>>>>> master
     Recipe.belongsTo(models.User, {
       foreignKey: "userId",
       onDelete: "CASCADE"
     })
+    Recipe.hasMany(models.Comment, {
+      foreignKey: "recipeId",
+      as: "comments"
+    });
   };
   Recipe.prototype.isOwner = function () {
     return this.userId === this.foreignKey;

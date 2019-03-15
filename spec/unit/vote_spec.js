@@ -1,5 +1,7 @@
 const sequelize = require("../../src/db/models/index").sequelize;
 const Recipe = require("../../src/db/models").Recipe;
+const Comment = require("../../src/db/models").Comment;
+
 const User = require("../../src/db/models").User;
 const Vote = require("../../src/db/models").Vote;
 
@@ -33,13 +35,25 @@ describe("Vote", () => {
                         .then((res) => {
                             this.recipe = res;
 
-
+                            Comment.create({
+                                    body: "ay caramba!!!!!",
+                                    userId: this.user.id,
+                                    recipeId: this.recipe.id
+                                })
+                                .then((res) => {
+                                    this.comment = res;
+                                    done();
+                                })
+                                .catch((err) => {
+                                    console.log(err);
+                                    done();
+                                });
                         })
                         .catch((err) => {
                             console.log(err);
                             done();
                         });
-                });
+                })
         });
     });
     describe("#create()", () => {
@@ -166,15 +180,15 @@ describe("Vote", () => {
 
         it("should associate a recipe and a vote together", (done) => {
 
-            Vote.create({ 
+            Vote.create({
                     value: -1,
                     recipeId: this.recipe.id,
                     userId: this.user.id
                 })
                 .then((vote) => {
-                    this.vote = vote; 
+                    this.vote = vote;
 
-                    Recipe.create({ // create a new post
+                    Recipe.create({
                             title: "Dress code on Proxima b",
                             style: "Spacesuit, space helmet, space boots, and space gloves",
                             recipeId: this.recipe.id,
@@ -182,12 +196,12 @@ describe("Vote", () => {
                         })
                         .then((newPost) => {
 
-                            expect(this.vote.recipeId).toBe(this.recipe.id); // check vote not associated with newPost
+                            expect(this.vote.recipeId).toBe(this.recipe.id); 
 
-                            this.vote.setRecipe(newRecipe) // update post reference for vote
+                            this.vote.setRecipe(newRecipe) 
                                 .then((vote) => {
 
-                                    expect(vote.recipeId).toBe(newRecipe.id); // ensure it was updated
+                                    expect(vote.recipeId).toBe(newRecipe.id); 
                                     done();
 
                                 });

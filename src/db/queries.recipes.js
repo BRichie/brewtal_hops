@@ -1,7 +1,8 @@
 const Recipe = require("./models").Recipe;
-const User = require("./models").User;
 const Authorizer = require("../policies/application");
 const helper = require('../auth/helpers');
+const Comment = require("./models").Comment;
+const User = require("./models").User;
 
 
 module.exports = {
@@ -19,7 +20,13 @@ module.exports = {
       })
   },
   getRecipe(id, callback) {
-    return Recipe.findById(id)
+    return Recipe.findById(id, {
+      include: [
+        {model: Comment, as: "comments", include: [
+          {model: User }
+        ]}
+      ]
+    })
       .then((recipe) => {
 
         callback(null, recipe);
