@@ -100,7 +100,7 @@ module.exports = {
 
 
   update(req, res, next) {
-    recipeQueries.updateRecipe(req.params.id, req.body, (err, recipe) => {
+    recipeQueries.updateRecipe(req, req.body, (err, recipe) => {
       if (err || recipe == null) {
         res.redirect(401, `/recipes/${req.params.id}/edit`);
       } else {
