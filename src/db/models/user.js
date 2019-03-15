@@ -27,6 +27,10 @@ module.exports = (sequelize, DataTypes) => {
   
   
     User.associate = function(models) {
+      User.hasMany(models.Recipe, {
+        foreignKey: "userId",
+        as: "recipes"
+      });
 
       User.prototype.isAdmin = function() {
         return this.role === "admin";
@@ -34,7 +38,6 @@ module.exports = (sequelize, DataTypes) => {
       User.prototype.isStandard = function () {
         return this.role === "standard";
       };
-    // associations can be defined here
   };
   return User;
 };
