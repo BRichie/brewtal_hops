@@ -4,6 +4,8 @@ module.exports = {
       const userRoutes = require("../routes/users");
       const recipeRoutes = require("../routes/recipes");
       const commentRoutes = require("../routes/comments");
+      const voteRoutes = require("../routes/votes");
+
 
 
 
@@ -17,6 +19,8 @@ module.exports = {
       app.use(userRoutes);
       app.use(recipeRoutes);
       app.use(commentRoutes);
+      app.use(voteRoutes);
+
 
 
 

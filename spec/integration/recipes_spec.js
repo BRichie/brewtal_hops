@@ -15,23 +15,14 @@ describe("routes : recipes", () => {
       force: true
     }).then((res) => {
       User.create({
-          name: "X",
-          email: "x@example.com",
-          password: "passwordtest",
-          role: "standard"
+          name: "Bowie",
+          email: "starman@tesla.com",
+          password: "Trekkie4lyfe",
+          role: "member"
 
         })
         .then((user) => {
           this.user = user;
-
-          request.get({
-            url: "http://localhost:3000/auth/fake",
-            form: {
-              role: user.role,
-              userId: user.id,
-              email: user.email
-            }
-          });
 
 
 
@@ -43,10 +34,7 @@ describe("routes : recipes", () => {
             .then((recipe) => {
               this.recipe = recipe;
               done();
-            })
-            .catch((err) => {
-              console.log(err);
-              done();
+
             });
 
         });

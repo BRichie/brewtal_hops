@@ -91,7 +91,7 @@ module.exports = {
   destroy(req, res, next) {
     recipeQueries.destroyRecipe(req, (err, recipe) => {
       if (err) {
-        res.redirect(500, `/recipes/${recipe.id}`)
+        res.redirect(500, `/recipes/${req.params.id}`)
       } else {
         res.redirect(303, "/recipes")
       }

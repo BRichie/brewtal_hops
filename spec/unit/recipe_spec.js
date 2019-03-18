@@ -12,10 +12,10 @@ describe("Recipe", ()=>{
      sequelize.sync({force: true}).then((res) => {
 
         User.create({
-       	 name: "X",
-         email: "x@example.com",
-         password: "123456",
-         role: "standard"
+					name: "Bowie",
+					email: "starman@tesla.com",
+          password: "Trekkie4lyfe",
+       		role: "member"
        })
        .then((user) => {
          this.user = user; 
@@ -87,7 +87,7 @@ describe("Recipe", ()=>{
 			Recipe.create({
 				title:"Recipe without a description"
 			})
-			.then((newRecipe)=>{
+			.then((recipe)=>{
 				done();
 				//since the code will go to the error, let's catch the error
 			})

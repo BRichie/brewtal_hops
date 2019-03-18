@@ -1,5 +1,5 @@
 const Comment = require("./models").Comment;
-const Post = require("./models").Post;
+const Recipe = require("./models").Recipe;
 const User = require("./models").User;
 
 const Authorizer = require("../policies/comment");
@@ -17,7 +17,7 @@ module.exports = {
     });
   },
 
- // #3
+
   deleteComment(req, callback){
     return Comment.findById(req.params.id)
     .then((comment) => {
