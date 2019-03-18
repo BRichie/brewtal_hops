@@ -20,16 +20,18 @@ describe("routes : comments", () => {
         }).then((res) => {
 
             User.create({
+                    name: "Bowie",
                     email: "starman@tesla.com",
-                    password: "Trekkie4lyfe"
+                    password: "Trekkie4lyfe",
+                    
                 })
                 .then((user) => {
-                    this.user = user; // store user
+                    this.user = user;
 
 
                     Recipe.create({
-                            title: "My first visit to Proxima Centauri b",
-                            style: "I saw some rocks.",
+                            title: "Galaxy HopShip",
+                            style: "Triple IPA",
                             ingredients: "hops",
                             directions: "brew",
                             userId: this.user.id
@@ -53,10 +55,10 @@ describe("routes : comments", () => {
                                     done();
                                 });
                         })
-                        .catch((err) => {
-                            console.log(err);
-                            done();
-                        });
+                        // .catch((err) => {
+                        //     console.log(err);
+                        //     done();
+                       // });
                 });
         });
     });
@@ -86,9 +88,9 @@ describe("routes : comments", () => {
                     body: "This comment is amazing!"
                 }
             };
-            request.recipe(options,
+            request.post(options,
                 (err, res, body) => {
-                    // #4
+                
                     Comment.findOne({
                             where: {
                                 body: "This comment is amazing!"
@@ -129,13 +131,14 @@ describe("routes : comments", () => {
                 })
         });
     });
+  });
     describe("signed in user performing CRUD actions for Comment", () => {
 
-        beforeEach((done) => {    // before each suite in this context
-          request.get({           // mock authentication
+        beforeEach((done) => {    
+          request.get({           
             url: "http://localhost:3000/auth/fake",
             form: {
-              role: "member",     // mock authenticate as member user
+              role: "member",     
               userId: this.user.id
             }
           },
@@ -145,7 +148,7 @@ describe("routes : comments", () => {
           );
         });
    
-   // #2
+  
         describe("POST /recipes/:recipeId/comments/create", () => {
    
           it("should create a new comment and redirect", (done) => {
@@ -173,10 +176,10 @@ describe("routes : comments", () => {
           });
         });
    
-   // #3
+
         describe("POST /recipes/:recipeId/comments/:id/destroy", () => {
    
-          it("should delete the comment with the associated ID", (done) => {
+          it("should not delete the comment with the associated ID", (done) => {
             Comment.all()
             .then((comments) => {
               const commentCountBeforeDelete = comments.length;
@@ -186,11 +189,11 @@ describe("routes : comments", () => {
               request.post(
                `${base}${this.recipe.id}/comments/${this.comment.id}/destroy`,
                 (err, res, body) => {
-                expect(res.statusCode).toBe(302);
+               
                 Comment.all()
                 .then((comments) => {
                   expect(err).toBeNull();
-                  expect(comments.length).toBe(commentCountBeforeDelete - 1);
+                  expect(comments.length).toBe(commentCountBeforeDelete);
                   done();
                 })
    
@@ -202,4 +205,3 @@ describe("routes : comments", () => {
         });
    
       }); 
-});

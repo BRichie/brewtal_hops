@@ -23,32 +23,29 @@ module.exports = (sequelize, DataTypes) => {
     role: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: "standard"
+      defaultValue: "member"
     }
   }, {});
 
 
   User.associate = function (models) {
+    
     User.hasMany(models.Recipe, {
       foreignKey: "userId",
       as: "recipes"
     });
-<<<<<<< HEAD
     User.hasMany(models.Vote, {
       foreignKey: "userId",
       as: "votes"
-=======
+    });
     User.hasMany(models.Comment, {
       foreignKey: "userId",
       as: "comments"
->>>>>>> master
-    });
+    })
 
     User.prototype.isAdmin = function () {
       return this.role === "admin";
-    };
-    User.prototype.isStandard = function () {
-      return this.role === "standard";
+    
     };
   };
   return User;

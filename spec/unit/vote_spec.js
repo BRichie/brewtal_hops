@@ -18,15 +18,17 @@ describe("Vote", () => {
         }).then((res) => {
 
             User.create({
+                    name: "Bowie",
                     email: "starman@tesla.com",
-                    password: "Trekkie4lyfe"
+                    password: "Trekkie4lyfe",
+                    role: "member"
                 })
                 .then((res) => {
                     this.user = res;
 
                     Recipe.create({
-                            title: "My first visit to Proxima Centauri b",
-                            style: "I saw some rocks.",
+                            title: "Galaxy HopShip",
+                            style: "Triple IPA",
                             ingredients: "hops",
                             directions: "brew",
                             userId: this.user.id
@@ -153,7 +155,6 @@ describe("Vote", () => {
 
     });
 
-    // #2
     describe("#getUser()", () => {
 
         it("should return the associated user", (done) => {
@@ -196,12 +197,12 @@ describe("Vote", () => {
                         })
                         .then((newPost) => {
 
-                            expect(this.vote.recipeId).toBe(this.recipe.id); 
+                            expect(this.vote.recipeId).toBe(this.recipe.id);
 
-                            this.vote.setRecipe(newRecipe) 
+                            this.vote.setRecipe(newRecipe)
                                 .then((vote) => {
 
-                                    expect(vote.recipeId).toBe(newRecipe.id); 
+                                    expect(vote.recipeId).toBe(newRecipe.id);
                                     done();
 
                                 });
@@ -226,7 +227,7 @@ describe("Vote", () => {
                 .then((vote) => {
                     this.comment.getRecipe()
                         .then((associatedRecipe) => {
-                            expect(associatedRecipe.title).toBe("My first visit to Proxima Centauri b");
+                            expect(associatedRecipe.title).toBe("Galaxy HopShip");
                             done();
                         });
                 })
