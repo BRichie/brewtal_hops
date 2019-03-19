@@ -24,7 +24,7 @@ describe("Comment", () => {
 
           Recipe.create({
               title: "Galaxy HopShip",
-              style: "I saw some rocks.",
+              style: "Triple IPA",
               ingredients: "hops",
               directions: "brew",
               userId: this.user.id
@@ -78,7 +78,6 @@ describe("Comment", () => {
     });
 
 
-    // #5: We test that comments with invalid attributes are not created
     it("should not create a comment with missing body, assigned post or user", (done) => {
       Comment.create({
           body: "Are the inertial dampers still engaged?"
@@ -103,12 +102,12 @@ describe("Comment", () => {
 
   });
 
-  // #6: We test the `setUser` method which assigns a User object to the comment it was called on
   describe("#setUser()", () => {
 
     it("should associate a comment and a user together", (done) => {
 
       User.create({
+          name: "bernie",
           email: "bern@2020.com",
           password: "password"
         })
@@ -149,6 +148,8 @@ describe("Comment", () => {
       Recipe.create({
           title: "Galaxy HopShip",
           style: "Triple IPA",
+          ingredients: "hops",
+          directions: "brew",
           recipeId: this.recipe.id,
           userId: this.user.id
         })
@@ -156,7 +157,7 @@ describe("Comment", () => {
 
           expect(this.comment.recipeId).toBe(this.recipe.id);
 
-          this.comment.setRecipe(newRecipe) // associate new post to comment
+          this.comment.setRecipe(newRecipe)
             .then((comment) => {
 
               expect(comment.recipeId).toBe(newRecipe.id); // confirm association took place

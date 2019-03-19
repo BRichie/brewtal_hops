@@ -36,6 +36,7 @@ describe("routes : comments", () => {
                             directions: "brew",
                             userId: this.user.id
                         })
+                      
                         .then((recipe) => {
                             this.recipe = recipe;
 
@@ -55,10 +56,10 @@ describe("routes : comments", () => {
                                     done();
                                 });
                         })
-                        // .catch((err) => {
-                        //     console.log(err);
-                        //     done();
-                       // });
+                      .catch((err) => {
+                            console.log(err);
+                          done();
+                        });
                 });
         });
     });
@@ -78,7 +79,7 @@ describe("routes : comments", () => {
             );
         });
 
-    });
+  
     describe("POST /recipes/:recipeId/comments/create", () => {
 
         it("should not create a new comment", (done) => {
@@ -104,8 +105,7 @@ describe("routes : comments", () => {
                             console.log(err);
                             done();
                         });
-                }
-            );
+                });
         });
     });
     describe("POST /recipes/:recipeId/comments/:id/destroy", () => {
@@ -179,7 +179,7 @@ describe("routes : comments", () => {
 
         describe("POST /recipes/:recipeId/comments/:id/destroy", () => {
    
-          it("should not delete the comment with the associated ID", (done) => {
+          it("should delete the comment with the associated ID", (done) => {
             Comment.all()
             .then((comments) => {
               const commentCountBeforeDelete = comments.length;
@@ -189,11 +189,13 @@ describe("routes : comments", () => {
               request.post(
                `${base}${this.recipe.id}/comments/${this.comment.id}/destroy`,
                 (err, res, body) => {
+                  expect(res.statusCode).toBe(302);
+
                
                 Comment.all()
                 .then((comments) => {
                   expect(err).toBeNull();
-                  expect(comments.length).toBe(commentCountBeforeDelete);
+                  expect(comments.length).toBe(commentCountBeforeDelete - 1);
                   done();
                 })
    
@@ -205,3 +207,4 @@ describe("routes : comments", () => {
         });
    
       }); 
+    });
