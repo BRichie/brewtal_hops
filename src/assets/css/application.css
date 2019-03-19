@@ -1,6 +1,6 @@
 body {
-    padding-top: 54px;
-    background-image: url("././hops.jpeg");
+  padding: 0px
+
   }
 
   .alert-success {
@@ -50,6 +50,154 @@ body {
   .alert-danger .alert-link {
     color: #e6e6e6; 
   }
+  .simple-form {
+    display: flex;
+    overflow-y: scroll;
+    padding-bottom: 1.25rem;
+  }
+  .simple-form input {
+    margin: 0 .25rem;
+    min-width: 125px;
+    border: 1px solid #eee;
+    border-left: 3px solid;
+    border-radius: 5px;
+    transition: border-color .5s ease-out;
+  }
+  .simple-form input:optional {
+    border-left-color: #999;
+  }
+  .simple-form input:required:valid {
+    border-left-color: palegreen;
+  }
+  .simple-form input:invalid {
+    border-left-color: salmon;
+  }
+  .simple-form input:required:focus:valid {
+    background: url("/images/check.svg") no-repeat 95% 50%;
+    background-size: 25px;
+  }
+  .simple-form input:focus:invalid {
+    background: url("/images/tnt.svg") no-repeat 95% 50%;
+    background-size: 45px;
+  }
+  #cssmenu {
+    zoom: 1;
+    width: auto;
+    background: #1b1c1b;
+    padding: 8px 0;
+  }
+  #cssmenu:before {
+    content: '';
+    display: block;
+  }
+  #cssmenu:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  #cssmenu ul {
+    list-style-type: none;
+    position: relative;
+    display: block;
+    font-size: 12px;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #7ab900;
+    zoom: 1;
+  }
+  #cssmenu ul:before {
+    content: '';
+    display: block;
+  }
+  #cssmenu ul:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  #cssmenu li {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+  #cssmenu li a {
+    float: left;
+    color: #A79787;
+    text-decoration: none;
+    height: 24px;
+    padding: 9px 15px 0;
+    font-weight: normal;
+  }
+  #cssmenu li:hover,
+  #cssmenu .active {
+    text-decoration: none;
+    border-bottom: 2px solid #a6b882;
+  }
+  #cssmenu li:hover a {
+    color: #fff;
+  }
+  #cssmenu .active a {
+    color: #fff;
+    font-weight: 700;
+  }
+  .large-header {
+    position: relative;
+    width: 100%;
+    background: #111;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+ }
+ 
+ .demo .large-header {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+ }
+.plato{
+  position: absolute;
+  bottom: 10px;
+  width: 50%;
+  text-align: center;
+  top:75%;
+  left: 25%;
+  font-size: 25pt;
+  font-family:  'Permanent Marker', cursive;
+  color: rgb(57, 206, 57)
+}
+ 
+ .main-title {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: #F9F1E9;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+ }
+ 
+ .demo .main-title {
+    text-transform: uppercase;
+    font-size: 4.2em;
+    letter-spacing: 0.1em;
+ }
+ 
+ .main-title .thin {
+    font-weight: 200;
+ }
+ body {
+  background-image: url("././hops.jpeg");
+  padding: 5px;
+ }
+ 
+ @media only screen and (max-width: 768px) {
+    .demo .main-title {
+       font-size: 3em;
+    }
+ }
+  
 
 
 

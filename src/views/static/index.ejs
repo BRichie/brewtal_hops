@@ -1,7 +1,8 @@
 <!DOCTYPE html>
   <head>
     <% include ./partials/head.ejs %>
-
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  
   </head>
   <body>
 
@@ -12,16 +13,25 @@
       <main class="container">
           <% include ../static/partials/messages.ejs %>
 
-
+          <div class="container demo">
+              <div class="content">
+                 <div id="large-header" class="large-header">
+                    <canvas id="demo-canvas"></canvas>
+                    <h1 class="main-title"><span class="thin">Brewtal</span> Galaxy</h1>
+                    <h2 class="plato">"He was a wise man who </span>invented beer" <br>Plato<br></h2>
+                 </div>
+                
+                 
+              </div>
+           </div>
       
-        <header class="jumbotron my-4">
+        <!-- <header class="jumbotron my-4">
           <h1 class="display-3">BREWTAL HOPS</h1>
-          <p class="lead">Start Brewing! </p>
+          <p class="lead">Start Brewing! </p> -->
 
   
-      <a href="/users/signup" class="btn btn-primary">Sign up</a>
 
-    </form>
+ 
 
         </header>
 
