@@ -11,6 +11,7 @@ const User = require("../../src/db/models").User;
 describe("routes : recipes", () => {
   beforeEach((done) => {
     this.recipe;
+
     sequelize.sync({
       force: true
     }).then((res) => {
@@ -34,13 +35,13 @@ describe("routes : recipes", () => {
             .then((recipe) => {
               this.recipe = recipe;
               done();
-
+            })
+              .catch((err) => {
+                console.log(err);
+                done();
+              });
             });
-
-        });
-
-    });
-
+          });
 
     describe("GET /recipes", () => {
 
@@ -57,7 +58,7 @@ describe("routes : recipes", () => {
       it("should render a view with the selected recipe", (done) => {
         request.get(`${base}${this.recipe.id}`, (err, res, body) => {
           expect(err).toBeNull();
-          expect(body).toContain("HopCult");
+          expect(body).toContain("Cluster-Byte");
           done();
         });
       });
@@ -103,7 +104,7 @@ describe("routes : recipes", () => {
           request.get(`${base}${this.recipe.id}/edit`, (err, res, body) => {
             expect(err).toBeNull();
             expect(body).toContain("Edit Brew");
-            expect(body).toContain("HopCult");
+            expect(body).toContain("Cluster-Byte");
             done();
           });
         });
@@ -138,5 +139,5 @@ describe("routes : recipes", () => {
 
       });
     });
-  });
-});
+  })
+})

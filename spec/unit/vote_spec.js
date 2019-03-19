@@ -129,8 +129,8 @@ describe("Vote", () => {
                     userId: this.user.id
                 })
                 .then((vote) => {
-                    this.vote = vote; // store it
-                    expect(vote.userId).toBe(this.user.id); //confirm it was created for this.user
+                    this.vote = vote; 
+                    expect(vote.userId).toBe(this.user.id); 
 
                     User.create({ // create a new user
                             email: "bern@2020.com",
@@ -190,12 +190,12 @@ describe("Vote", () => {
                     this.vote = vote;
 
                     Recipe.create({
-                            title: "Dress code on Proxima b",
-                            style: "Spacesuit, space helmet, space boots, and space gloves",
+                            title: "Galaxy HopShip",
+                            style: "Triple IPA",
                             recipeId: this.recipe.id,
                             userId: this.user.id
                         })
-                        .then((newPost) => {
+                        .then((newRecipe) => {
 
                             expect(this.vote.recipeId).toBe(this.recipe.id);
 
