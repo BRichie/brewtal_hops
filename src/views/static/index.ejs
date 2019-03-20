@@ -1,65 +1,38 @@
 <!DOCTYPE html>
-  <head>
-    <% include ./partials/head.ejs %>
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-  
-  </head>
-  <body>
 
-    <% include ./partials/navbar.ejs %>
+<head>
+  <% include ./partials/head.ejs %>
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
+</head>
+
+<body class ="blackout">
+
+  <% include ./partials/navbar.ejs %>
 
 
-     
-      <main class="container">
-          <% include ../static/partials/messages.ejs %>
 
-          <div class="container demo">
-              <div class="content">
-                 <div id="large-header" class="large-header">
-                    <canvas id="demo-canvas"></canvas>
-                    <h1 class="main-title"><span class="thin">Brewtal</span> Galaxy</h1>
-                    <h2 class="plato">"He was a wise man who </span>invented beer" <br>Plato<br></h2>
-                 </div>
-                
-                 
-              </div>
-           </div>
-      
-        <!-- <header class="jumbotron my-4">
-          <h1 class="display-3">BREWTAL HOPS</h1>
-          <p class="lead">Start Brewing! </p> -->
+  <main class="container">
+    <% include ../static/partials/messages.ejs %>
 
-  
+    <div class="container demo">
+      <div class="content">
+        <div id="large-header" class="large-header">
+          <canvas id="demo-canvas"></canvas>
+          <h1 class="main-title"><span class="thin">Brewtal</span> Galaxy</h1>
+          <h2 class="plato">"He was a wise man who </span>invented beer" <br>Plato<br></h2>
+        </div>
 
- 
 
-        </header>
+      </div>
+    </div>
 
-       
-        <section class="row text-center">
+ </main>
 
-         <!--  <section class="col-lg-5">
-            <h4 class="card-title">Recipes</h4>
-            <p class="card-text">Try new beers!</p>
-          </section>
 
-          <section class="col-lg-5">
-            <h4 class="card-title">Supplies</h4>
-            <p class="card-text">Purchase home brewing products!</p>
-          </section>
 
-          <section class="col-lg-5">
-            <h4 class="card-title">Share</h4>
-            <p class="card-text"> Share your thoughts and recipes to other brewers!</p>
-          </section> -->
+  <% include ./partials/baseScripts.ejs %>
 
-        </section>
-      
+</body>
 
-      </main>
- 
-
-      <% include ./partials/baseScripts.ejs %>
-
-    </body>
 </html>
