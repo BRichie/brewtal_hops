@@ -37,13 +37,15 @@ module.exports = {
   },
 
   create(req, res, next) {
+    
     let newRecipe = {
       title: req.body.title,
-      style: req.body.style,
+      style:req.body.style,
       ingredients: req.body.ingredients,
       directions: req.body.directions,
       userId: req.user.id
     };
+    
     recipeQueries.addRecipe(newRecipe, (err, recipe) => {
       if (err) {
         res.redirect(500, "/recipes/new");

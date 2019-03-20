@@ -1,52 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <% include ../static/partials/head.ejs %>
-  </head>
-  <body>
-    <% include ../static/partials/navbar.ejs %>
 
-    <main class="container">
-       <% include ../static/partials/messages.ejs %>
+<head>
+  <% include ../static/partials/head.ejs %>
+</head>
 
-       <h1>NEW BREW</h1>
-       <form action="/recipes/create" method="post">
-        <div class="form-group">
+<body>
+  <% include ../static/partials/navbar.ejs %>
 
-<label for="title">New Recipe:</label>
-          <input type="text" class="form-control" name="title" aria-describedby="titleHelp" placeholder="Enter Title">
-        </div>
-        <div class="form-group">
-            <label for="style">Style</label>
-                    <select class="form-select">
-                      <option>Choose Style</option>
-                      <option>IPA</option>
-                      <option>Stout</option>
-                      <option>Lager</option>
-                      <option>Pilsner</option>
-                      <option>Blonde</option>
-                      <option>Red/Amber</option>
-                      <option>Brown</option>
-                    </select>
-                  </div>
-       
-         
-        <div class="form-group">
-                <label for="ingredients">Ingredients</label>
-                <textarea rows="4" class="form-control" name="ingredients" placeholder="Enter Ingredients"></textarea>
-              </div>
-              <div class="form-group">
-                    <label for="directions">Directions</label>
-                    <textarea rows="4" class="form-control" name="directions" placeholder="Enter Directions"></textarea>
-                  </div>
-                  <div>
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                  </div>      
-                </form>
+  <main class="container">
+    <% include ../static/partials/messages.ejs %>
 
-    </main>
+    <h1>NEW BREW</h1>
+    <form action="/recipes/create" method="post">
+      <div class="form-group">
 
-    <% include ../static/partials/baseScripts.ejs %>
+        <label for="title">New Recipe:</label>
+        <input type="text" class="form-control" name="title" aria-describedby="titleHelp" placeholder="Enter Title">
+      </div>
+      <div class="form-group">
+        <label for="style">Style</label>
+        <select class="form-select" name="style" >
+          <option>Choose Style</option>
+          <option value="ale">Ale</option>
+          <option value="blonde">Blonde</option>
+          <option value="brown">Brown</option>
+          <option value="ipa">IPA</option>
+          <option value="kolsch">Kolsch</option>
+          <option value="lager">Lager</option>
+          <option value="pilsner">Pilsner</option>
+          <option value="porter">Porter</option>
+          <option value="red/amber">Red/Amber</option>
+          <option value="sour">Sour</option>
+          <option value="stout">Stout</option>
 
-  </body>
+        </select>
+      </div>
+
+
+      <div class="form-group">
+        <label for="ingredients">Ingredients</label>
+        <textarea rows="4" class="form-control" name="ingredients" placeholder="Enter Ingredients"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="directions">Directions</label>
+        <textarea rows="4" class="form-control" name="directions" placeholder="Enter Directions"></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+
+  </main>
+
+  <% include ../static/partials/baseScripts.ejs %>
+
+</body>
+
 </html>
