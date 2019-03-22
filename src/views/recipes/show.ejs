@@ -3,62 +3,76 @@
 
 <head>
   <% include ../static/partials/head.ejs %>
+
 </head>
 
-<body>
-  <% include ../static/partials/navbar.ejs %>
-
+<body class="recipeShow">
   <main class="container">
+  <div class="pagecontent">
+
+    <% include ../static/partials/navbar.ejs %>
+
 
     <% include ../static/partials/messages.ejs %>
 
-    <div style="display: flex; align-items:center;">
-        <% if(currentUser) { %>
-          <% include ../votes/voting.ejs %>
-        <% } %>
-        <h1><%= recipe.title %></h1>
+    <div class="form-group">
+      <div class="form-control">
+      
+        <div id="beerName"> <%= recipe.title %></div>
       </div>
-
-
-    <% if(currentUser) { %>
-    <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">Edit</a>
-    <form style="display:initial" action="/recipes/<%= recipe.id %>/destroy" method="post">
-      <button type="submit" class="btn btn-danger">Delete</button>
-    </form>
-    <% } %>
-    <p>Style:
-      <%= recipe.style %>
-    </p>
-
-    <p>Ingredients:
+    <section id="brewStyle">
+      <p>
+      Style: <%= recipe.style %></p>
+    </section>
+    </div>
+    <details>
+      <summary>Ingredients</summary>
+    
       <%= recipe.ingredients %>
-    </p>
-    <p>Directions:
-      <%= recipe.directions %>
-    </p>
 
-    <section id="comment-form">
+    
+    </details>
+      <details>
+        <summary>Directions</summary>
+      <%=recipe.directions %>
 
-        
-           <% if(currentUser) { %>
-             <% include ../comments/new.ejs %>
-           <% } %>
+      </details>
+          <section id="comment-form">
+
+
+            <% if(currentUser) { %>
+            <% include ../comments/new.ejs %>
+            <% } %>
           </section>
-       
-       
+
+
           <section id="comment-list">
-           <% if(recipe.comments) { %>
-             <% recipe.comments.forEach((comment) => { %>
-       
-       
-               <%- include("../comments/show.ejs", {comment}) %>
-             <% }) %>
-           <% } %>
+            <% if(recipe.comments) { %>
+            <% recipe.comments.forEach((comment) => { %>
+
+
+            <%- include("../comments/show.ejs", {comment}) %>
+            <% }) %>
+            <% } %>
           </section>
+          <% if(currentUser) { %>
+          <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">Edit</a>
+          <form style="display:initial" action="/recipes/<%= recipe.id %>/destroy" method="post">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+          <% } %>
+          <div id="votestyle" display: flex; align-items:left;>
+            <% if(currentUser) { %>
+            <% include ../votes/voting.ejs %>
+            <% } %>
+            <h1>
+              <%= recipe.title %>
+            </h1>
+          </div>
 
-  </main>
+          </main>
 
-  <% include ../static/partials/baseScripts.ejs %>
+          <% include ../static/partials/baseScripts.ejs %>
 </body>
 
 </html>

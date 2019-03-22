@@ -85,6 +85,9 @@
     background: url("/images/tnt.svg") no-repeat 95% 50%;
     background-size: 45px;
   }
+
+  /* h o m e p a g e */
+
   #cssmenu {
     zoom: 1;
     width: auto;
@@ -168,7 +171,7 @@
   top:75%;
   left: 25%;
   font-size: 25pt;
-  font-family:  'Permanent Marker', cursive;
+  font-family: 'Orbitron', sans-serif;
   color: rgb(255, 255, 255)
 }
  
@@ -198,9 +201,65 @@
     .demo .main-title {
        font-size: 3em;
     }
- 
-
   }
+ 
+/* recipe show style  */
+.recipeShow {
+  background-image: url("././bottle-tops.jpg");
+  background-size: cover; 
+
+}
+#new_brew{
+  font-family: 'Roboto Mono', monospace;
+
+}
+details[open] summary:after {
+  content: "-";
+}
+details {
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
+    color: #0c0b0b;
+    margin: 0 0 .4em;
+    padding: 1%;
+    background-color: rgb(255, 255, 255)
+}
+
+
+summary::-webkit-details-marker {
+  display: none
+}
+summary:after {
+ 
+  border-radius: 5px; 
+  content: "🍺"; 
+  color: #fff; 
+  float: left; 
+  font-size: 15pt; 
+  margin: -5px 10px 0 0; 
+  padding: 0; 
+  text-align: center; 
+  width: 20px;
+}
+
+#brewStyle{
+  font-family:  'Roboto Mono', monospace;
+  text-align:  center;
+  font-size: 18pt;
+  text-transform: capitalize;
+
+}
+#beerName{
+font-family: 'Roboto Mono', monospace;
+font-size: 24pt;
+text-align:  center;
+text-transform: uppercase;
+}
+#voteStyle{
+  align-content: left 
+}
+
  
   
 
