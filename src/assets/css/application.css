@@ -293,6 +293,7 @@ form button[type=submit] {
 }
 #new_brew{
   font-family: 'Roboto Mono', monospace;
+  text-align: center;
 
 }
 details[open] summary:after {
