@@ -19,10 +19,11 @@
       <div class="form-control">
       
         <div id="beerName"> <%= recipe.title %></div>
-      </div>
+      
     <section id="brewStyle">
       <p>
-      Style: <%= recipe.style %></p>
+      Style: <%= recipe.style %>
+    </p>
     </section>
     </div>
     <details>
@@ -37,6 +38,7 @@
       <%=recipe.directions %>
 
       </details>
+    </div>
           <section id="comment-form">
 
 
@@ -44,7 +46,7 @@
             <% include ../comments/new.ejs %>
             <% } %>
           </section>
-
+  
 
           <section id="comment-list">
             <% if(recipe.comments) { %>
@@ -55,13 +57,14 @@
             <% }) %>
             <% } %>
           </section>
+
           <% if(currentUser) { %>
           <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">Edit</a>
           <form style="display:initial" action="/recipes/<%= recipe.id %>/destroy" method="post">
             <button type="submit" class="btn btn-danger">Delete</button>
           </form>
           <% } %>
-          <div id="votestyle" display: flex; align-items:left;>
+          <div id="voteStyle" display: flex; align-items:left;>
             <% if(currentUser) { %>
             <% include ../votes/voting.ejs %>
             <% } %>
@@ -69,6 +72,7 @@
               <%= recipe.title %>
             </h1>
           </div>
+ 
 
           </main>
 
