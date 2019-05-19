@@ -21,11 +21,26 @@
         <div id="beerName"> <%= recipe.title %></div>
       
     <section id="brewStyle">
+        <div id="voteStyle" display: flex; align-items:inherit;>
+            <% if(currentUser) { %>
+            <% include ../votes/voting.ejs %>
+            <% } %>
+        
+          </div>
       <p>
       Style: <%= recipe.style %>
     </p>
     </section>
     </div>
+<br>
+
+    <% if(currentUser) { %>
+      <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-primary">Edit</a>
+
+
+<% } %>
+
+<br>
     <details>
       <summary>Ingredients</summary>
     
@@ -58,21 +73,8 @@
             <% } %>
           </section>
 
-          <% if(currentUser) { %>
-          <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">Edit</a>
-          <form style="display:initial" action="/recipes/<%= recipe.id %>/destroy" method="post">
-            <button type="submit" class="btn btn-danger">Delete</button>
-          </form>
-          <% } %>
-          <div id="voteStyle" display: flex; align-items:left;>
-            <% if(currentUser) { %>
-            <% include ../votes/voting.ejs %>
-            <% } %>
-            <h1>
-              <%= recipe.title %>
-            </h1>
-          </div>
- 
+  
+       
 
           </main>
 

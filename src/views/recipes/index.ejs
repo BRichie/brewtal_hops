@@ -21,7 +21,9 @@
       <% recipes.forEach((recipe) => { %>
       <li class="list-group-item">
         <a href="/recipes/<%= recipe.id %>">
-          <%= recipe.title %> </a>
+          <%= recipe.title %> 
+          <%= ":" %> 
+          <%= recipe.style %></a>
       </li>
       <% }) %>
     </ul>

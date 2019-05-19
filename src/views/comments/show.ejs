@@ -1,14 +1,21 @@
 
  <% if(comment) { %>
     <div style="width: 50%">
-      <hr>
+        <div class="dialogbox">
+            <div class="body">
+              <span class="tip tip-up"></span>
+              <div class="message">
+         
+   
       <p>
         <%= comment.body %>
       </p>
-      <small class="card-subtitle mb-2 text-muted">
 
         sent by <%= comment.User.email %> on <%= comment.createdAt %>
-      </small>
+      </div>
+    </div>
+  </div>
+     
 
       <% if(currentUser && currentUser.id === comment.userId || currentUser.isAdmin()) { %>
         <form style="display:initial"
@@ -17,6 +24,6 @@
           <button type="submit" class="btn btn btn-sm btn-outline-danger">Delete</button>
         </form>
       <% } %>
-      <hr>
+     
     </div>
   <% } %>
