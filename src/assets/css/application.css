@@ -1,4 +1,53 @@
-/* vote */
+/* new recipe */
+label, #ingredientsFont{
+  font-family: 'Roboto Mono', monospace;
+  color: whitesmoke;
+}
+
+input .form-control{
+  position: relative;
+  display:flex;
+  align-self: center
+}
+textarea, #ingredients .form-control {
+  display: flex;
+  position: center;
+ 
+  width: 96%;
+}
+
+/* list */
+.recipeTitle{
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+}
+#wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recipe-list {
+  margin: 0 auto;
+  text-align: left;
+  width: 36%;
+
+}
+.recipe-list__item {
+  background-color: #FBFCFF;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.36);
+  margin: 0 0 10px;
+  padding: 20px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.recipe-list__item::after {
+  color: #CCC;
+  content: "";
+  font-weight: bold;
+  position: absolute;
+  right: 2.5%;
+}
 
 
 
@@ -76,11 +125,11 @@ form button[type=submit] {
   cursor: pointer;
 }
 
-.image  {
+.imageRecipe  {
    background-image: url("././hops.jpeg");
   background-size: cover; 
   background-position: center center;
-
+  
 }
 .blackout{
   background-color: rgba(36, 32, 32, 0.993)
@@ -245,7 +294,7 @@ form button[type=submit] {
     background-position: center center;
     z-index: 1;
  }
- 
+ /* landing */
  .demo .large-header {
     background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
     background-size: cover
