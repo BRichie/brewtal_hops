@@ -13,30 +13,31 @@
     <% include ../static/partials/messages.ejs %>
 
 
-    <h1>Sign up</h1>
+    
 
 
         <form action="/users/signup" method="post">
+          <h1 class="signUpTitle">Sign Up</h1>
           <div class="simple-form">
-            <label for="name"></label>Name:</label>
+            <label for="name"></label></label>
             <input type="text" name="name" placeholder="Enter your name" class="form-control" />
-            <small class="text-muted" id="usernameHelp">username must be a minimum of 4 characters</small>
+            <small class="text-muted" id="usernameHelp"></small>
           </div>
 
           <div class="simple-form">
-            <label for="email">Email:</label>
+            <label for="email"></label>
             <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-            <small class="text-muted" id="emailHelp">email address must be a valid address</small>
+            <small class="text-muted" id="emailHelp"></small>
           </div>
 
           <div class="simple-form">
-            <label for="password">Password:</label>
+            <label for="password"></label>
             <input type="password" class="form-control" name="password" aria-describedby="passwordHelp" placeholder="Enter password">
-            <small class="text-muted" id="passwordHelp">password must match confirmation below</small>
+            <small class="text-muted" id="passwordHelp"></small>
           </div>
 
           <div class="simple-form">
-            <label for="passwordConfirm">Re-Enter Password:</label>
+            <label for="passwordConfirm"></label>
             <input type="password" class="form-control" name="passwordConfirm" aria-describedby="passwordHelp"
               placeholder="Re-Enter password">
           </div>

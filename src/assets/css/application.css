@@ -216,11 +216,22 @@ form button[type=submit] {
   .simple-form input:focus:invalid {
     background-size: 45px;
   }
-
+/* sign up*/
   .signUpBg{
     background-image: url(./barley.jpg);
   }
+  .signUpTitle{
+    font-family: 'Roboto Mono', monospace;
+    color: whitesmoke;
 
+  }
+/* sign in*/
+
+.signInTitle{
+  font-family: 'Roboto Mono', monospace;
+  color: whitesmoke;
+
+}
   /* navbar */
   #cssmenu {
     zoom: 1;
