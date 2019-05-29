@@ -18,18 +18,35 @@ textarea, #ingredients .form-control {
 
 /* list */
 .recipeTitle{
-  text-align: center;
+  text-align: left;
   font-family: 'Roboto Mono', monospace;
+}
+a#wrapper.btn.btn.btn-light, a:link a:visited{
+  background-color: #51ce37;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Roboto Mono', monospace;
+  color: whitesmoke;
 }
 #wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
 }
-.recipe-list {
-  margin: 0 auto;
+
+  .voteStyle{
+    text-decoration: none;
+  }
+  
+
+ul.recipe-list {
+  margin: 0;
+  padding: 10px;
   text-align: left;
-  width: 36%;
+ display: table;
+  width: 45%;
 
 }
 .recipe-list__item {
@@ -40,6 +57,7 @@ textarea, #ingredients .form-control {
   padding: 20px;
   position: relative;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-family: 'Lato', sans-serif;
 }
 .recipe-list__item::after {
   color: #CCC;
@@ -360,6 +378,23 @@ form button[type=submit] {
   font-family: 'Roboto Mono', monospace;
   text-align: center;
 
+
+
+
+
+}
+
+a.btn.btn-outline-info, a:link a:visited{
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .4);
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgba(60, 172, 50, 0.6);
+  display: inline-block;
+  font-family: 'Roboto Mono', monospace;
+  color: whitesmoke;
 }
 details[open] summary:after {
   content: "-";
@@ -371,7 +406,9 @@ details {
     color: #0c0b0b;
     margin: 0 0 .4em;
     padding: 1%;
-    background-color: rgb(255, 255, 255)
+    background-color: rgb(255, 255, 255);
+    display: table;
+  width: 45%;
 }
 
 

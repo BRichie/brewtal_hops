@@ -21,7 +21,7 @@
         <div id="beerName"> <%= recipe.title %></div>
       
     <section id="brewStyle">
-        <div id="voteStyle" display: flex; align-items:inherit;>
+        <div id="voteStyle">
             <% if(currentUser) { %>
             <% include ../votes/voting.ejs %>
             <% } %>
@@ -35,7 +35,7 @@
 <br>
 
     <% if(currentUser) { %>
-      <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-primary">Edit</a>
+      <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-outline-info">Edit</a>
 
 
 <% } %>
