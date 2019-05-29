@@ -13,10 +13,11 @@
 
     <% include ../static/partials/messages.ejs %>
     <h1 class="recipeTitle">Brew Recipes</h1>
-
+   
     <% if(currentUser) { %>
-    <a href="/recipes/new" class="btn btn-primary" id="wrapper">New Recipe</a>
+    <a href="/recipes/new" class="btn btn-light" id="wrapper">Submit New Recipe</a>
     <% } %>
+   
     <ul class="recipe-list">
 
       <% recipes.forEach((recipe) => { %>
